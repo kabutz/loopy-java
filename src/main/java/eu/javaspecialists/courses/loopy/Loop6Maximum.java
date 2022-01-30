@@ -1,6 +1,7 @@
 package eu.javaspecialists.courses.loopy;
 
 import java.util.List;
+import java.util.Optional;
 
 // From https://horstmann.com/unblog/2022-01-25/
 public class Loop6Maximum {
@@ -13,5 +14,14 @@ public class Loop6Maximum {
         */
         List<String> strings = List.of("elephant", "aggravate", "zombi", "java", "haberdasher", "baclava", "guava");
         // TODO: find the longest String
+        Optional<String> largest = Optional.empty();
+        for (String e : strings) {
+            if (largest.isEmpty() || e.length() > largest.get().length()) {
+                largest = Optional.of(e);
+            }
+        }
+        System.out.println("largest = " + largest);
+        // Output:
+        // largest = Optional[haberdasher]
     }
 }

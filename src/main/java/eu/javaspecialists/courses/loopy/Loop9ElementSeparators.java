@@ -17,5 +17,15 @@ public class Loop9ElementSeparators {
         List<String> strings = List.of("elephant", "zombi", "java", "baclava");
         // TODO: Generate a result String that contains the strings separated by
         // TODO: a vertical bar |
+        String result = "";
+        boolean first = true;
+        for (String e : strings) {
+            if (first) { first = false; }
+            else { result += " | "; }
+            result += e;
+        }
+        System.out.println("result = " + result);
+        // Output:
+        // result = elephant | zombi | java | baclava
     }
 }

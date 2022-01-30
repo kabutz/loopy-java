@@ -1,5 +1,7 @@
 package eu.javaspecialists.courses.loopy;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 // From https://horstmann.com/unblog/2022-01-25/
@@ -13,5 +15,13 @@ public class Loop13ReadingInputIntoAnArrayOrList {
         Scanner in = new Scanner("elephant aggravate zombi java haberdasher baclava guava");
         String[] values = new String[5];
         // TODO: Insert Strings into "values" using in.hasNext() and in.next()
+        int currentSize = 0;
+        while (in.hasNext() && currentSize < values.length) {
+            values[currentSize] = in.next();
+            currentSize++;
+        }
+        System.out.println("values = " + Arrays.toString(values));
+        // Output:
+        // values = [elephant, aggravate, zombi, java, haberdasher]
     }
 }

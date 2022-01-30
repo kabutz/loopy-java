@@ -12,5 +12,12 @@ public class Loop1Sum {
         */
         List<String> strings = List.of("cheese", "tomato", "lettuce", "bread", "majo");
         // TODO: calculate the sum of the length of all the strings
+        int sum = 0;
+        for (String e : strings) {
+            sum = sum + e.length();
+        }
+        System.out.println("sum = " + sum);
+        // Output:
+        // sum = 28
     }
 }

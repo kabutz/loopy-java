@@ -15,20 +15,6 @@ public class Loop8ComparingAdjacentValues {
         */
         Scanner in = new Scanner("elephant elephant aggravate zombi zombi zombi java baclava baclava guava");
         // TODO: Print out whenever a value is the same as the previous value
-        if (in.hasNext()) {
-            String current = in.next();
-            while (in.hasNext()) {
-                String previous = current;
-                current = in.next();
-                if (current.equals(previous)) {
-                    System.out.println("Repeated: " + current);
-                }
-            }
-        }
-        // Output:
-        // Repeated: elephant
-        // Repeated: zombi
-        // Repeated: zombi
-        // Repeated: baclava
+        // N/A
     }
 }

@@ -13,12 +13,9 @@ public class Loop3CountingMatches {
         */
         List<String> strings = List.of("elephant", "aggravate", "zombi", "java", "haberdasher", "baclava", "guava");
         // TODO: count how many Strings contain the letters "ava"
-        int count = 0;
-        for (String e : strings) {
-            if (e.contains("ava")) {
-                count++;
-            }
-        }
+        long count = strings.stream()
+                .filter(e -> e.contains("ava"))
+                .count();
         System.out.println("count = " + count);
         // Output:
         // count = 4

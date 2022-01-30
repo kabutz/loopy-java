@@ -2,6 +2,8 @@ package eu.javaspecialists.courses.loopy;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ArrayList;
+import java.util.List;
 
 // From https://horstmann.com/unblog/2022-01-25/
 public class Loop5FindingAllMatches {
@@ -14,14 +16,11 @@ public class Loop5FindingAllMatches {
         */
         List<String> strings = List.of("elephant", "aggravate", "zombi", "java", "haberdasher", "baclava", "guava");
         // TODO: find all Strings with letters "ava" and add to a List
-        var result = new ArrayList<String>();
-        for (String e : strings) {
-            if (e.contains("ava")) {
-                result.add(e);
-            }
-        }
-        System.out.println("result = " + result);
+        List<String> matches = strings.stream()
+                .filter(e -> e.contains("ava"))
+                .toList();
+        System.out.println("matches = " + matches);
         // Output:
-        // result = [aggravate, java, baclava, guava]
+        // matches = [aggravate, java, baclava, guava]
     }
 }

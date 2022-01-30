@@ -14,9 +14,7 @@ public class Loop11RemovingTheElementAtAGivenPosition {
         int currentSize = 12;
         // TODO: Remove the number at position 5
         int position = 5;
-        for (int i = position + 1; i < currentSize; i++) {
-            values[i - 1] = values[i];
-        }
+        System.arraycopy(values, position + 1, values, position, currentSize - position - 1);
         values[currentSize-1] = -1;
         currentSize--;
         System.out.println("values = " + Arrays.toString(values));

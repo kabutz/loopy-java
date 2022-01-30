@@ -1,7 +1,10 @@
 package eu.javaspecialists.courses.loopy;
 
+import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.OptionalInt;
+import java.util.stream.IntStream;
 
 // From https://horstmann.com/unblog/2022-01-25/
 public class Loop7PositionOfMaximum {
@@ -14,15 +17,11 @@ public class Loop7PositionOfMaximum {
         */
         List<String> strings = List.of("elephant", "aggravate", "zombi", "java", "haberdasher", "baclava", "guava");
         // TODO: find the position of the longest String
-        OptionalInt largestPosition = OptionalInt.empty();
-        for (int i = 0; i < strings.size(); i++) {
-            if (largestPosition.isEmpty() ||
-                    strings.get(i).length() >
-                            strings.get(largestPosition.getAsInt()).length())
-                largestPosition = OptionalInt.of(i);
-        }
+        Optional<Integer> largestPosition = IntStream.range(0, strings.size())
+                .boxed()
+                .max(Comparator.comparingInt(i -> strings.get(i).length()));
         System.out.println("largestPosition = " + largestPosition);
         // Output:
-        // largestPosition = OptionalInt[4]
+        // largestPosition = Optional[4]
     }
 }

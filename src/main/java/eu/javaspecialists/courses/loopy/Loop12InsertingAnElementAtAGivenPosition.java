@@ -19,9 +19,7 @@ public class Loop12InsertingAnElementAtAGivenPosition {
         int position = 2;
         if (currentSize < values.length) {
             currentSize++;
-            for (int i = currentSize - 1; i > position; i--) {
-                values[i] = values[i - 1];
-            }
+            System.arraycopy(values, position, values, position + 1, currentSize - position - 1);
             values[position] = newElement;
         }
         System.out.println("values = " + Arrays.toString(values));
